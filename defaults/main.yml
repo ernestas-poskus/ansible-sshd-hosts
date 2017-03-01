@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-sshd-hosts
+hosts_allow: []
+hosts_deny: []

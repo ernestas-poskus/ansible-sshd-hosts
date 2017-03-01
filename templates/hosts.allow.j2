@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+{% for host in hosts_allow %}
+{% if host | ipaddr %}
+sshd: {{ host }}
+{% endif %}
+{% endfor %}

@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+{% if hosts_deny | length > 0 %}
+{% for host in hosts_deny %}
+{% if host | ipaddr %}
+sshd: {{ host }}
+{% endif %}
+{% endfor %}
+{% else %}
+sshd: ALL
+{% endif %}

@@ -1,0 +1,21 @@
+---
+# tasks file for ansible-sshd-hosts
+- name: Create /etc/hosts.allow
+  template: >
+      src=hosts.allow.j2
+      dest=/etc/hosts.allow
+      owner=root
+      group=root
+      mode=0400
+  notify: restart sshd
+  when: hosts_allow | length > 0
+
+- name: Create /etc/hosts.deny
+  template: >
+      src=hosts.deny.j2
+      dest=/etc/hosts.deny
+      owner=root
+      group=root
+      mode=0400
+  notify: restart sshd
+  when: hosts_allow | length > 0 or hosts_deny | length > 0
