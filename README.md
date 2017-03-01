@@ -1,6 +1,8 @@
 ansible-sshd-hosts
 =========
 
+[![Build Status](https://travis-ci.org/ernestas-poskus/ansible-sshd-hosts.svg?branch=master)](https://travis-ci.org/ernestas-poskus/ansible-sshd-hosts)
+
 Ansible playbook to control /etc/hosts.allow & /etc/hosts.deny for sshd service.
 
 Requirements
